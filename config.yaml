@@ -1,0 +1,86 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# ⚙️ LASEF MERKEZİ KONFİGÜRASYON DOSYASI (config.yaml) — V8.0 (DERİN & ZAMAN KISITSIZ)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+sef:
+  varsayilan_saglayici: "gemini"    # Kalıcı Baş Mimar: Google Gemini
+  model: "gemini-3.5-flash-lite"    # Canlı doğrulanan güncel model
+  fallback_models:
+    - "gemini-3.5-flash-lite"
+    - "gemini-flash-lite-latest"
+    - "gemini-3.1-flash-lite"
+    - "gemini-3-flash-preview"
+    - "gemini-3.6-flash"
+    - "gemini-3.5-flash"
+  max_deneme: 5
+  timeout: 90.0                     # Şef planlama ve QA tavan süresi
+  otonom_ajan_sayisi_optimizasyonu: true
+  eszamanli_sozlesmeli_dalga: true
+
+isci:
+  max_paralel: 4                    # Eşzamanlı amele kapasitesi (optimize NVIDIA NIM havuzu için)
+  timeout_per_request: 75.0         # İstek başına tavan süresi (streaming + akıllı devre kesici ile)
+  sync_timeout: 120.0               # WAITING_SYNC dinleme/senkronizasyon tavan süresi (120s)
+  max_tokens:
+    html: 32000
+    js: 32000
+    jsx: 32000
+    ts: 32000
+    tsx: 32000
+    py: 32000
+    c: 32000
+    cpp: 32000
+    cs: 32000
+    java: 32000
+    css: 32000
+    md: 32000
+    json: 16000
+    txt: 16000
+    varsayilan: 32000
+
+golge_ajan:
+  aktif: true
+  seviye: 1
+  llm_model: "nvidia/nemotron-3.5-lightning-30b-a3b"
+  oynanabilirlik_denetimi: true
+
+modeller:
+  genel:
+    - "nvidia/nemotron-3.5-lightning-30b-a3b"
+    - "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+    - "poolside/laguna-xs-2.1"
+    - "nvidia/nemotron-3.5-bolt-e4b"
+  html:
+    - "nvidia/nemotron-3.5-lightning-30b-a3b"
+    - "poolside/laguna-xs-2.1"
+    - "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+  css:
+    - "nvidia/nemotron-3.5-bolt-e4b"
+    - "nvidia/nemotron-3.5-lightning-30b-a3b"
+    - "poolside/laguna-xs-2.1"
+  kodlama:
+    - "nvidia/nemotron-3.5-lightning-30b-a3b"
+    - "poolside/laguna-xs-2.1"
+    - "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+    - "nvidia/nemotron-3-ultra-550b-a55b"
+  agir:
+    - "nvidia/nemotron-3-ultra-550b-a55b"
+    - "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+    - "nvidia/nemotron-3.5-lightning-30b-a3b"
+    - "stepfun-ai/step-5-preview"
+  denetim:
+    - "nvidia/nemotron-3.5-bolt-e4b"
+    - "nvidia/nemotron-3.5-lightning-30b-a3b"
+    - "poolside/laguna-xs-2.1"
+  vision:
+    - "nvidia/nemotron-3.5-super-vl-120b-a12b"
+    - "nvidia/cosmos-reason2-8b"
+
+birlestirici:
+  otonom_dom_id_onarim: true       # HTML ve JS/CSS arasındaki ID uyumsuzluklarını otomatik onar
+  script_tag_senkronizasyonu: true # Eksik <script> / <link> taglerini HTML'e enjekte et
+
+cikti:
+  alt_klasorler: false             # src/, assets/, docs/ klasör hiyerarşisi
+  log_dosyasi: true                # logs/ dizinine kaydet
+  rapor_dosyasi: true              # PROJE_RAPORU.md

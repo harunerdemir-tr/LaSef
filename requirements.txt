@@ -1,0 +1,28 @@
+# ═══════════════════════════════════════════════
+# LaSef — AI Orkestra Sistemi Bağımlılıkları
+# ═══════════════════════════════════════════════
+# Kurulum: pip install -r requirements.txt
+# ═══════════════════════════════════════════════
+
+# Ana AI İstemcileri
+openai>=1.0.0
+google-genai>=2.0.0
+
+# Dosya İşleme & Yapılandırma
+pypdf>=4.0.0
+Pillow>=10.0.0
+imageio>=2.30.0
+imageio-ffmpeg>=0.5.0
+numpy>=1.24.0
+pyyaml>=6.0.0
+
+# Ortam Değişkenleri
+python-dotenv>=1.0.0
+
+# GUI
+customtkinter>=5.2.0
+
+# Tarayıcı Otomasyonu & Test (Playwright)
+playwright>=1.40.0
+mcp>=1.0.0
+openpyxl>=3.1.0

@@ -1,0 +1,51 @@
+# ═══════════════════════════════════════════════
+# LaSef — AI Orkestra Sistemi
+# ═══════════════════════════════════════════════
+
+# Ortam ve API anahtarları
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Arşivler
+*.rar
+*.zip
+*.7z
+
+# Üretilen proje çıktıları (isteğe bağlı)
+# LaSef_Proje_*/
+# Proje_*/
+
+# Log dosyaları
+*.log
+logs/
+
+# LaSef yerel çalışma zamanı ve geçici dosyalar
+temp_media/
+terminal_outputs/
+.lasef_memory.json
+.lasef_branches.json
+.lasef_ui_prefs.json
+database.json
